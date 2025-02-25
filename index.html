@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysioAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PhysioAI</h1>
+        </div>
+        <div class="about-section">
+            <div class="about-text">
+                <h2>About</h2>
+                <p>PhysioAI is an AI-powered platform for physiotherapy insights.his project develops an AI-powered system for posture monitoring in physiotherapy. It utilizes deep learning to analyze patient movements, detecting and correcting postural errors in real-time. The system aims to enhance rehabilitation by providing immediate feedback, improving treatment effectiveness, and potentially enabling home-based therapy. This technology represents a significant advancement in applying AI to healthcare, with the potential to revolutionize physiotherapy.</p>
+            </div>
+            <div class="about-image"><img src="phy.png"></div>
+        </div>
+        <div class="sections">
+            <h2>Sections</h2>
+            <div class="buttons">
+                <button onclick="toggleSection('legs')">Legs</button>
+                <div id="legs" class="exercise-section" style="display: none;">
+                    <h3>Leg Exercises</h3>
+                    <p>1. <strong> Step-Ups: </strong>Step up onto a low step or platform.</p>
+                    <p>2. <strong>Single-Leg Stance: </strong>Stand on one leg for a few seconds, and gradually increase the duration.</p>
+                    <p>3. <strong>Straight Leg Raises: </strong>Lie on your back, tighten your thigh muscle, and lift your leg a few inches off the ground.</p>
+                </div>
+            
+                <button onclick="toggleSection('arms')">Arms</button>
+                <div id="arms" class="exercise-section">
+                    <h3>Arm Exercises</h3>
+                    <p>1. <strong> Arm circles: </strong>Rotating the arm in clockwise and counterclockwise directions.</p>
+                    <p>2. <strong>Cross-body arm stretch: </strong>Pulling one arm across the chest.</p>
+                </div>
+                <button onclick="toggleSection('shoulders')">Shoulders</button>
+                <div id="shoulders" class="exercise-section">
+                    <h3>Shoulder Exercises</h3>
+                    <p>1. <strong>Shoulder Press:</strong> Stand or sit with weights at shoulder height, press them overhead until your arms are straight.</p>
+                    <p>2. <strong>Lateral Raises:</strong> Stand with a dumbbell in each hand at your sides, raise your arms out to the side until they are parallel to the ground.</p>
+                    <p>3. <strong>Front Raises:</strong> Stand with a dumbbell in each hand at your thighs, raise the weights in front of you to shoulder height.</p>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
