@@ -1,6 +1,6 @@
 
 # 🧠 PhysioAI – Real-Time Posture Monitoring Web App
-
+![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 
 PhysioAI is a web-based physiotherapy assistant that provides **real-time posture monitoring** using computer vision. It is designed to guide users through physical therapy exercises, giving instant feedback and counting repetitions using webcam input.
 
