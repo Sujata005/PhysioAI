@@ -1,0 +1,95 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arm Exercise </title>
+  <link rel="stylesheet" href="exercise.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    
+</head>
+<body>
+
+  <h1>Arm Exercise</h1>
+
+  <div class="container">
+    <div class="instructions">
+      <h2>Instructions</h2>
+      <ul>
+        <li>Stand straight with feet shoulder-width apart</li>
+        <li>Slowly lower your body into a squat position</li>
+        <li>Keep your back straight and knees behind your toes</li>
+        <li>Hold for 2 seconds, then return to starting position</li>
+        <li>Repeat for 10-15 reps per set</li>
+      </ul>
+      <p>Make sure you're visible in the webcam frame for better posture checks!</p>
+    </div>
+
+    <video id="webcam" autoplay playsinline></video>
+  </div>
+
+  <script>
+    const video = document.getElementById('webcam');
+
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+      .then(stream => {
+        video.srcObject = stream;
+      })
+      .catch(err => {
+        alert('Error accessing webcam: ' + err.message);
+      });
+  </script>
+
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arm Exercise</title>
+
+  <!-- Link the right CSS files from Flask's static folder -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/exercise.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <h1>Arm Exercise</h1>
+
+  <div class="container">
+    <div class="instructions">
+      <h2>Instructions</h2>
+      <ul>
+        <li>Stand straight with feet shoulder-width apart</li>
+        <li>Slowly lower your body into a squat position</li>
+        <li>Keep your back straight and knees behind your toes</li>
+        <li>Hold for 2 seconds, then return to starting position</li>
+        <li>Repeat for 10-15 reps per set</li>
+      </ul>
+      <p>Make sure you're visible in the webcam frame for better posture checks!</p>
+    </div>
+
+    <!-- Live Feed (Optional: Replace with webcam or Flask stream) -->
+    <div class="video-section">
+      <h2>Live Video Feed</h2>
+      <img
+        id="videoFeed"
+        src="/video_feed/arms"
+        alt="Live Arm Exercise Feed"
+        style="max-width: 640px; max-height: 480px; display: block; margin-top: 20px;"
+      />
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysioAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="exercise\exercise.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PhysioAI</h1>
+        </div>
+        <div class="about-section">
+            <div class="about-text">
+                <h2>About</h2>
+                <p>PhysioAI is an AI-powered platform for physiotherapy insights.his project develops an AI-powered system for posture monitoring in physiotherapy. It utilizes deep learning to analyze patient movements, detecting and correcting postural errors in real-time. The system aims to enhance rehabilitation by providing immediate feedback, improving treatment effectiveness, and potentially enabling home-based therapy. This technology represents a significant advancement in applying AI to healthcare, with the potential to revolutionize physiotherapy.</p>
+            </div>
+            <div class="about-image"><img src="phy.png"></div>
+        </div>
+        <div class="sections">
+            <h2>Sections</h2>
+            <div class="buttons">
+                <button onclick="toggleSection('legs')">Legs</button>
+                <div id="legs" class="exercise-section" style="display: none;">
+                    <h3>Leg Exercises</h3>
+                    <div class="exercise-cards">
+                  
+                      <div class="exercise-card card-1">
+                        <h4><a href="exercise/leg.html">Step-Ups</a></h4>
+                        <p>Step up onto a low step or platform.</p>
+                      </div>
+                  
+                      <div class="exercise-card card-2">
+                        <h4><a href="exercise/leg.html">Single-Leg Stance</a></h4>
+                        <p>Stand on one leg for a few seconds, and gradually increase the duration.</p>
+                      </div>
+                  
+                  
+                    </div>
+                  </div>
+                  
+                <button onclick="toggleSection('arms')">Arms</button>
+                <div id="arms" class="exercise-section" style="display: none;">
+                    <h3>Arm Exercises</h3>
+                    <div class="exercise-cards">
+                    <div class="exercise-card card-1">
+                        <h4><a href="exercise/arm.html">Cross-body arm stretch</a></h4>
+                        <p>Pulling one arm across the chest.</p>
+                    </div>
+
+                    <div class="exercise-card card-2">
+                        <h4><a href="exercise/arm.html">Arm circles</a></h4>
+                        <p>Rotating the arm in clockwise and counterclockwise directions.</p>
+                    </div>
+                    </div>
+                </div>
+                <button onclick="toggleSection('shoulders')">Shoulders</button>
+                <div id="shoulders" class="exercise-section">
+                    <h3>Shoulder Exercises</h3>
+                    <div class="exercise-cards">
+                        <div class="exercise-card card-1">
+                            <h4><a href="exercise/shoulder.html">Shoulder Press</a></h4>
+                            <p> Stand or sit with weights at shoulder height, press them overhead until your arms are straight.</p>
+                        </div>
+    
+                        <div class="exercise-card card-2">
+                            <h4><a href="exercise/shoulder.html">Lateral Raises:</a></h4>
+                            <p>Stand with a dumbbell in each hand at your sides, raise your arms out to the side until they are parallel to the ground.</p>
+                        </div>
+                        </div>
+                     </div>
+            </div>
+            
+            
+            
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+--->
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Physio Pose Detection</title>
+</head>
+<body>
+  <h1>Select Exercise</h1>
+  <select onchange="setMode(this.value)">
+    <option value="shoulder">Shoulder</option>
+    <option value="leg">Leg</option>
+  </select>
+
+  <h2>Live Pose Detection</h2>
+  <img src="http://127.0.0.1:5000/video_feed" width="640" height="480" />
+
+  <script>
+    function setMode(mode) {
+      fetch('http://127.0.0.1:5000/set_mode', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mode: mode })
+      })
+      .then(response => response.json())
+      .then(data => console.log('Mode set to:', data.mode));
+    }
+  </script>
+</body>
+</html>
+-->
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Physio Pose Detection</title>
+<style>
+  button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+  img { max-width: 640px; max-height: 480px; display: block; margin-top: 20px; }
+</style>
+</head>
+<body>
+  <h1>Choose Exercise Mode</h1>
+  <button onclick="startFeed('arms')">Arms</button>
+  <button onclick="startFeed('shoulders')">Shoulders</button>
+  <button onclick="startFeed('legs')">Legs</button>
+
+  <img id="videoFeed" src="" alt="Video Feed will appear here" />
+
+  <script>
+    function startFeed(mode) {
+      document.getElementById('videoFeed').src = `/video_feed/${mode}`;
+    }
+  </script>
+</body>
+</html>
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PhysioAI</title>
+   <!-- <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="exercise/exercise.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" /> -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/exercise.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- <img src="{{ url_for('static', filename='static\images\phy.png') }}" alt="PhysioAI" /> -->
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PhysioAI</h1>
+        </div>
+
+        <div class="about-section">
+            <div class="about-text">
+                <h2 style="justify-content: center;">ABOUT </h2>
+                <p>
+                    PhysioAI is an AI-powered platform for physiotherapy insights. This project develops an AI-powered system for posture monitoring in physiotherapy. It utilizes deep learning to analyze patient movements, detecting and correcting postural errors in real-time. The system aims to enhance rehabilitation by providing immediate feedback, improving treatment effectiveness, and potentially enabling home-based therapy. This technology represents a significant advancement in applying AI to healthcare, with the potential to revolutionize physiotherapy.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="static\images\phy.png" alt="PhysioAI" />
+            </div>
+        </div>
+
+        <div class="sections">
+            <h2 style="color: black;">Sections</h2>
+            <div class="buttons">
+                <button onclick="startFeed('legs') ;toggleSection('legs')">Legs</button>
+                <div id="legs" class="exercise-section" style="display: none;">
+                    <h3>KNEE EXTENTIONS - FLEXTION</h3>
+                    <div class="exercise-cards">
+                        <div class="instructions">
+                        <h2>Instructions</h2>
+                        <ul>
+                            <li>Stand straight with feet shoulder-width apart</li>
+                            <li>Slowly lower your body into a squat position</li>
+                            <li>Keep your back straight and knees behind your toes</li>
+                            <li>Get to the point where the angles shown in the camera is nearly 90degree and green </li>
+                            <li>Hold for 2 seconds, then return to starting position</li>
+                            <li>Repeat for 10-15 reps per set in about 40-50seconds</li>
+                            <li>Perform 4 sets with 60-75seconds of rest in between sets.</li>
+                        </ul>
+                        <p style="color:darkgreen">Make sure you're visible in the webcam frame for better posture checks! and the angles should remain GREEN throughout the set.</p>
+                        </div>
+
+                        <img
+                         id="videoFeed-legs"
+                        src=""
+                        alt="Video Feed will appear here"
+                        style="max-width: 640px; max-height: 480px; display: block; margin-top: 20px;"
+                        />
+                    </div>
+                </div>
+
+                <button onclick="startFeed('arms') ;toggleSection('arms')">Arms</button>
+                <div id="arms" class="exercise-section" style="display: none;">
+                    <h3>ELBOW EXTENTIONS</h3>
+                    <div class="exercise-cards">
+                        <div class="instructions">
+                        <h2>Instructions</h2>
+                        <ul>
+                            <li>Sit or stand upright and keep your arm straight and palm upwards (supination) .</li>
+                            <li>Slowly bend your elbow and move your arm toward shoulders till the angle of 10-20 degrees.</li>
+                            <li>Hold for 2-3seconds for maximum flexion.</li>
+                            <li>Then slowly move your arm towards the starting point in same range of motion nearly close to 170degrees. </li>
+                            <li>Try to fully extend but don't lock the joint</li>
+                            <li>Repeat for 10-15 reps per set in about 40-50seconds</li>
+                            <li>Perform 4 sets with 60-75seconds of rest in between sets.</li>
+                        </ul>
+                        <p style="color:darkgreen">Make sure you're visible in the webcam frame for better posture checks! and the angles should remain GREEN throughout the set.</p>
+                        </div>
+                        <img
+                         id="videoFeed-arms"
+                        src=""
+                        alt="Video Feed will appear here"
+                        style="max-width: 640px; max-height: 480px; display: block; margin-top: 20px;"
+                        />
+                    </div>
+                </div>
+
+                <button onclick="startFeed('shoulders') ;toggleSection('shoulders')">Shoulders</button>
+                <div id="shoulders" class="exercise-section" style="display: none;">
+                    <h3>LATERAL RAISES</h3>
+                    <div class="exercise-cards">
+                        <div class="instructions">
+                        <h2>Instructions</h2>
+                        <ul>
+                            <li>Stand straight with your arms straight</li>
+                            <li>Arms relaxed at your sides, palms facing inward (toward your body).</li>
+                            <li>You can use light dumbbells or resistance bands, or perform it without weights during rehab.</li>
+                            <li>Slowly lift both arms out to the sides until they reach shoulder height (parallel to the floor) till nearly close to 90 degrees till its green.</li>
+                            <li>Hands aligned with shoulders and hold at the top for 1-2seconds as per comfort.</li>
+                            <li>Slowly lower your arms back down to the starting position with control till close to 5-10degrees of angles.</li>
+                            <li>Avoid swinging or dropping the arms.</li>
+                            <li>Repeat for 10-15 reps per set in about 40-50seconds</li>
+                            <li>Perform 4 sets with 60-75seconds of rest in between sets.</li>
+
+                        </ul>
+                        <p style="color:darkgreen">Make sure you're visible in the webcam frame for better posture checks! and the angles should remain GREEN throughout the set.</p>
+                        </div>
+                        <img
+                        id="videoFeed-shoulders"
+                        src=""
+                        alt="Video Feed will appear here"
+                        style="max-width: 640px; max-height: 480px; display: block; margin-top: 20px;"
+                />
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Function to toggle exercise sections visibility
+        function toggleSection(section) {
+            const sections = ['arms', 'legs', 'shoulders'];
+            sections.forEach(sec => {
+                document.getElementById(sec).style.display = sec === section ? 'block' : 'none';
+            });
+        }
+
+        // Function to start the video feed by changing the image src to Flask backend endpoint
+        function startFeed(mode) {
+    // First, clear all feeds (optional but good for switching)
+    ['legs', 'arms', 'shoulders'].forEach(sec => {
+        const img = document.getElementById(`videoFeed-${sec}`);
+        if (img) img.src = '';
+    });
+
+    // Then set the selected feed
+    const videoElement = document.getElementById(`videoFeed-${mode}`);
+    if (videoElement) {
+        videoElement.src = `/video_feed/${mode}`;
+    }
+}
+
+    </script>
+</body>
+</html>
