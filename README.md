@@ -21,16 +21,6 @@ PhysioAI is a web-based physiotherapy assistant that provides **real-time postur
 
 ---
 
-## 📸 Demo Screenshots
-
-| Home Page | Live Pose Detection |
-|----------|---------------------|
-| ![Homepage](path_to_image1.png) | ![Pose](path_to_image2.png) |
-
-> *(Replace the image paths above with actual screenshot URLs or markdown image links)*
-
----
-
 ## 🛠️ Technologies Used
 
 - **Backend:** Flask (Python)
